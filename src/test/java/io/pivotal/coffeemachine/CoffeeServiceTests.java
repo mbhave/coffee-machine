@@ -1,5 +1,6 @@
 package io.pivotal.coffeemachine;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Before;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for {@link CoffeeService}.
@@ -33,8 +35,17 @@ public class CoffeeServiceTests {
 		assertThat(menu).contains(entry("caffe mocha", 3.90));
 	}
 
+//	testing positive scenario if ingredients are not empty
 	@Test
 	public void makeDrink() {
+		
+		Map<String, Integer> ingredients = new HashMap<>();
+		ingredients.put("coffee", 10);
+		ingredients.put("sugar",10);
+		ingredients.put("cream", 10);
+		
+		when(inventory.getIngredients()).thenReturn(ingredients);
+		
 		this.machine.makeDrink("cappuccino");
 		verify(this.inventory).deduct("coffee", 2);
 		verify(this.inventory).deduct("sugar", 1);
