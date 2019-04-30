@@ -32,7 +32,7 @@ Initially, the inventory contains 10 units of coffee, sugar and cream. The coffe
 | 	Drink       | 	Ingredients										| Cost  |
 | ------------- | ------------------------------------------------- | ----- |
 | coffee      	| coffee (2 units), sugar (1 unit)				 	| $2.75 |
-| cappuccino  	| coffee (2 units), sugar (1 unit), cream (2 units) | $2.90 |
+| cappuccino  	| coffee (2 units), sugar (1 unit), cream (1 unit) | $2.90 |
 | caffe mocha 	| coffee (1 unit), sugar (1 unit), cream (1 unit) 	| $3.90 |
 
 NOTE: This initial configuration does not need to be dynamic. In particular, it is acceptable to perform this initialization in code, rather than
